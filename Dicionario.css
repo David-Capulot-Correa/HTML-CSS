@@ -1,0 +1,280 @@
+/* ===========================================================
+   ARQUIVO: style.css
+   CSS COMPLETO COM EXPLICAÇÕES
+   Inclui: Reset, textos, links, listas, imagens, botões,
+   formulários, containers, flex, grid, pseudo-classes,
+   animações, variáveis, responsividade e recursos avançados.
+   =========================================================== */
+
+/* -----------------------
+   RESET GLOBAL
+   Remove margens e padding padrão dos navegadores
+   e ajusta box-sizing para incluir borda e padding
+   ----------------------- */
+* {
+    margin: 0;               /* Remove margens externas padrão */
+    padding: 0;              /* Remove padding interno padrão */
+    box-sizing: border-box;  /* Inclui borda e padding no cálculo da largura */
+}
+
+/* -----------------------
+   BODY
+   Estilo global da página
+   ----------------------- */
+body {
+    font-family: Arial, sans-serif; /* Fonte principal da página */
+    background-color: #f5f5f5;      /* Cor de fundo padrão */
+    color: #333;                    /* Cor padrão do texto */
+    line-height: 1.6;               /* Espaçamento entre linhas para melhor leitura */
+    scroll-behavior: smooth;        /* Rolagem suave ao clicar em âncoras */
+}
+
+/* -----------------------
+   CABEÇALHO
+   ----------------------- */
+header {
+    background-color: #4CAF50; /* Fundo verde */
+    color: white;              /* Texto branco */
+    padding: 20px;             /* Espaçamento interno */
+    text-align: center;        /* Centraliza o conteúdo */
+}
+
+/* -----------------------
+   TÍTULOS
+   h1, h2, h3 com tamanhos diferentes
+   ----------------------- */
+h1, h2, h3 {
+    margin-bottom: 15px;   /* Espaço abaixo do título */
+    font-weight: bold;     /* Deixa o texto em negrito */
+}
+
+h1 { font-size: 2.5em; } /* Maior título */
+h2 { font-size: 2em; }   /* Subtítulo menor */
+h3 { font-size: 1.5em; } /* Subtítulo menor ainda */
+
+/* -----------------------
+   PARÁGRAFOS
+   ----------------------- */
+p {
+    margin-bottom: 15px; /* Espaço abaixo do parágrafo */
+    font-size: 16px;     /* Tamanho da fonte */
+}
+
+/* -----------------------
+   LINKS
+   ----------------------- */
+a {
+    color: blue;           /* Cor padrão dos links */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+a:visited {
+    color: purple; /* Cor do link após ser visitado */
+}
+
+/* -----------------------
+   LISTAS
+   ----------------------- */
+ul, ol {
+    margin: 20px;        /* Margem externa da lista */
+    padding-left: 40px;  /* Recuo dos marcadores/números */
+}
+
+li {
+    margin-bottom: 10px; /* Espaço entre itens */
+}
+
+/* -----------------------
+   IMAGENS
+   ----------------------- */
+img {
+    max-width: 100%;      /* Não ultrapassa a largura do container */
+    height: auto;         /* Mantém proporção da imagem */
+    border-radius: 8px;   /* Bordas arredondadas */
+    display: block;       /* Comporta-se como bloco */
+    margin: 15px auto;    /* Centraliza horizontalmente */
+}
+
+/* Efeitos visuais em imagens */
+img.blur { filter: blur(5px); }       /* Desfoca a imagem */
+img.saturado { filter: saturate(200%); } /* Intensifica cores */
+
+/* -----------------------
+   BOTÕES
+   ----------------------- */
+button {
+    background-color: #4CAF50; /* Fundo verde */
+    color: white;               /* Texto branco */
+    border: none;               /* Remove bordas padrão */
+    padding: 10px 20px;         /* Espaçamento interno */
+    border-radius: 5px;         /* Bordas arredondadas */
+    cursor: pointer;            /* Cursor em formato de mãozinha */
+    transition: 0.3s;           /* Animação suave para hover/active */
+}
+
+button:hover { background-color: #45a049; } /* Muda a cor no hover */
+button:active { transform: scale(0.95); }   /* Efeito de "apertado" */
+
+/* -----------------------
+   FORMULÁRIOS
+   ----------------------- */
+input, select, textarea {
+    width: 100%;           /* Largura total do container */
+    padding: 10px;         /* Espaço interno */
+    margin: 10px 0;        /* Espaço em cima e embaixo */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 5px;    /* Bordas arredondadas */
+}
+
+input[type="submit"] {
+    background-color: #4CAF50; /* Fundo verde */
+    color: white;              /* Texto branco */
+    border: none;              /* Remove borda */
+    cursor: pointer;           /* Cursor em formato de mão */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Fundo mais escuro no hover */
+}
+
+/* -----------------------
+   CONTAINERS / SEÇÕES
+   ----------------------- */
+.container {
+    width: 80%;             /* Largura de 80% da tela */
+    max-width: 1200px;      /* Limite máximo */
+    margin: auto;           /* Centraliza horizontalmente */
+    padding: 20px;          /* Espaçamento interno */
+    background: white;      /* Fundo branco */
+    border-radius: 10px;    /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* -----------------------
+   FLEXBOX
+   ----------------------- */
+.flex-container {
+    display: flex;              /* Ativa flexbox */
+    justify-content: center;    /* Alinha horizontalmente */
+    align-items: center;        /* Alinha verticalmente */
+    gap: 20px;                  /* Espaço entre os itens */
+}
+
+/* -----------------------
+   GRID
+   ----------------------- */
+.grid-container {
+    display: grid;                        /* Ativa grid */
+    grid-template-columns: 1fr 1fr 1fr;   /* 3 colunas iguais */
+    gap: 20px;                            /* Espaço entre colunas */
+}
+
+/* -----------------------
+   PSEUDO-ELEMENTOS
+   ----------------------- */
+h1::after {
+    content: " 🔥"; /* Adiciona emoji após o título */
+}
+
+/* -----------------------
+   ANIMAÇÕES
+   ----------------------- */
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.img-animada {
+    animation: girar 3s linear infinite; /* Gira a imagem continuamente */
+}
+
+/* -----------------------
+   TRANSFORM / MOVIMENTOS
+   ----------------------- */
+.caixa-transform {
+    transform: rotate(15deg) scale(1.1) translateX(20px);
+}
+
+/* -----------------------
+   TRANSIÇÕES
+   ----------------------- */
+.caixa-transicao {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: all 0.5s ease-in-out; /* Animação suave */
+}
+
+.caixa-transicao:hover {
+    background: blue;   /* Muda a cor no hover */
+    transform: scale(1.2); /* Aumenta o tamanho */
+}
+
+/* -----------------------
+   BACKGROUNDS AVANÇADOS
+   ----------------------- */
+.fundo {
+    background-image: url("fundo.jpg"); /* Imagem de fundo */
+    background-size: cover;             /* Cobre toda área */
+    background-attachment: fixed;       /* Fixa a imagem ao rolar */
+    background-blend-mode: multiply;    /* Mistura cores com fundo */
+}
+
+/* -----------------------
+   MULTICOLUMN
+   ----------------------- */
+.texto-colunas {
+    column-count: 3;   /* Divide texto em 3 colunas */
+    column-gap: 20px;  /* Espaço entre colunas */
+}
+
+/* -----------------------
+   CLIPPING / MÁSCARAS
+   ----------------------- */
+.recorte {
+    clip-path: circle(50%); /* Recorta o elemento em círculo */
+}
+
+/* -----------------------
+   RODAPÉ
+   ----------------------- */
+footer {
+    background-color: #333; /* Fundo escuro */
+    color: white;           /* Texto branco */
+    text-align: center;     /* Centraliza conteúdo */
+    padding: 15px;          /* Espaço interno */
+    margin-top: 30px;       /* Espaço acima do footer */
+}
+
+/* -----------------------
+   VARIÁVEIS CSS
+   ----------------------- */
+:root {
+    --cor-principal: #4CAF50; /* Variável para cor principal */
+    --espacamento: 20px;       /* Variável de espaçamento */
+}
+
+.var-exemplo {
+    background-color: var(--cor-principal);
+    margin: var(--espacamento);
+}
+
+/* -----------------------
+   RESPONSIVIDADE
+   ----------------------- */
+@media (max-width: 768px) {
+    body { background-color: lightblue; } /* Fundo muda em telas pequenas */
+    .grid-container { grid-template-columns: 1fr; } /* 1 coluna no celular */
+}
+
+/* -----------------------
+   CSS PARA IMPRESSÃO
+   ----------------------- */
+@media print {
+    body { background: white; color: black; } /* Página branca e texto preto */
+    nav, footer { display: none; }           /* Esconde nav e footer ao imprimir */
+}
