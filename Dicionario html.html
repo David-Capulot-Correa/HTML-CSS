@@ -1,0 +1,211 @@
+<!DOCTYPE html> <!-- Define a versão do HTML usada. HTML5 é o padrão atual.
+⚡ Alternativa: em versões antigas era <!DOCTYPE HTML PUBLIC ...> mas não é mais usado.
+-->
+
+<html> <!-- Elemento raiz do documento (engloba tudo) -->
+  <head> <!-- Cabeçalho do site: metadados, título, links externos -->
+    <title>Quiz para Programadores</title> <!-- Mostra o título na aba do navegador.
+    ⚡ Pode ser usado junto com <meta property="og:title"> para redes sociais. -->
+
+    <meta name="description" content="Um quiz para as pessoas jogarem"> <!-- Descrição para mecanismos de busca.
+    ⚡ Pode ser complementado com <meta name="keywords"> ou <meta property="og:description"> para SEO. -->
+  </head>
+
+  <body> <!-- Corpo da página: tudo que é visível para o usuário -->
+
+    <header> <!-- Cabeçalho principal da página.
+    ⚡ Pode ser usado dentro de <article> e <section> também. -->
+      <h1>Quiz Interativo para Programadores</h1> <!-- Título principal.
+      ⚡ Outros níveis: <h2>, <h3>... até <h6>.
+      ⚡ Se quiser destacar texto mas não for título, pode usar <p> + CSS. -->
+      <p>Teste seus conhecimentos em programação</p> <!-- Parágrafo de introdução.
+      ⚡ Para citações curtas, existe <q>. Para longas, <blockquote>. -->
+    </header>
+
+    <main> <!-- Conteúdo principal do site.
+    ⚡ Só deve existir um <main> por página. -->
+
+      <!-- ============================ INTRODUÇÃO ============================ -->
+      <section> <!-- Seção temática.
+      ⚡ Alternativa: <article> se fosse um conteúdo independente. -->
+        <h2>Sobre esse Quiz</h2> <!-- Subtítulo. -->
+        <p> <!-- Parágrafo de texto -->
+          Você está no quiz feito por 
+          <strong>David Capulot</strong> <!-- Deixa o texto em negrito (ênfase forte).
+          ⚡ Alternativa: <b>, mas <strong> é mais semântico. -->
+          sobre 
+          <abbr title="HyperText Markup Language">HTML</abbr> <!-- Explica siglas ao passar o mouse.
+          ⚡ Pode ser usado junto com <dfn> para definição de termos. -->
+          . <br> <!-- Quebra de linha.
+          ⚡ Alternativa: <p> em vez de usar <br> para separar parágrafos. -->
+          <em>Agora é hora do jogo!</em> <!-- Texto em itálico (ênfase fraca).
+          ⚡ Alternativa: <i>, mas <em> é semântico. -->
+        </p>
+      </section>
+
+      <!-- ============================ PERGUNTA 1 ============================ -->
+      <section>
+        <h2>Pergunta 1: Qual linguagem é usada para estruturar páginas web?</h2>
+        <form> <!-- Formulário de entrada de dados.
+        ⚡ Pode ter action="" para enviar para servidor, ou ser manipulado por JS. -->
+          
+          <!-- input type="radio" = botão de opção única -->
+          <!-- value = valor enviado ao formulário -->
+          <!-- id = identificador único -->
+          <!-- name = agrupa opções para permitir apenas 1 seleção -->
+          <input type="radio" value="Python" id="p1a" name="pergunta1">
+          <!-- label = legenda associada ao input -->
+          <!-- for="id_do_input" liga o texto ao campo -->
+          <label for="p1a">Python</label>
+          <br>
+
+          <input type="radio" value="C++" id="p1b" name="pergunta1">
+          <label for="p1b">C++</label>
+          <br>
+
+          <input type="radio" value="JavaScript" id="p1c" name="pergunta1">
+          <label for="p1c">JavaScript</label>
+          <br>
+
+          <input type="radio" value="HTML" id="p1d" name="pergunta1">
+          <label for="p1d">HTML</label>
+        </form>
+      </section>
+
+      <!-- ============================ PERGUNTA 2 ============================ -->
+      <section>
+        <h2>Pergunta 2: Na URL "http://www.google.com", o trecho "google.com" é o ______</h2>
+        <form>
+          <input type="text" id="p2" name="pergunta2" placeholder="Digite sua resposta..."> 
+          <!-- input type="text" = caixa de texto de uma linha.
+          ⚡ Alternativas:
+             - type="search" → estilizado para pesquisa.
+             - <textarea> → várias linhas de texto. -->
+        </form>
+      </section>
+
+      <!-- ============================ PERGUNTA 3 ============================ -->
+      <section>
+        <h2>Pergunta 3: Escreva uma senha forte</h2>
+        <form>
+          <input type="password" id="p3" name="pergunta3" placeholder="Digite uma senha...">
+          <!-- type="password" = campo onde caracteres aparecem como ***.
+          ⚡ Pode ser usado junto com atributo minlength e maxlength.
+          ⚡ Alternativa: type="text" mas estilizado via CSS (menos seguro). -->
+        </form>
+      </section>
+
+      <!-- ============================ PERGUNTA 4 ============================ -->
+      <section>
+        <h2>Pergunta 4: Em que ano nasceu o HTML?</h2>
+        <form>
+          <input type="date" id="p4" name="pergunta4">
+          <!-- type="date" = calendário para escolher data.
+          ⚡ Alternativas: type="month", type="week", type="datetime-local". -->
+        </form>
+      </section>
+
+      <!-- ============================ PERGUNTA 5 ============================ -->
+      <section>
+        <h2>Pergunta 5: Quais são consideradas linguagens de programação?</h2>
+        <form>
+          <input type="checkbox" id="p5a" name="pergunta5" value="JavaScript">
+          <label for="p5a">JavaScript</label>
+          <br>
+
+          <input type="checkbox" id="p5b" name="pergunta5" value="C++">
+          <label for="p5b">C++</label>
+          <br>
+
+          <input type="checkbox" id="p5c" name="pergunta5" value="Python">
+          <label for="p5c">Python</label>
+          <br>
+
+          <input type="checkbox" id="p5d" name="pergunta5" value="HTML">
+          <label for="p5d">HTML</label>
+          <!-- type="checkbox" = seleção múltipla.
+          ⚡ Alternativa: <select multiple> com várias opções. -->
+        </form>
+      </section>
+
+      <!-- ============================ PERGUNTA 6 ============================ -->
+      <section>
+        <h2>Pergunta 6: Adicione uma imagem que tenha a ver com programação</h2>
+        <form>
+          <input type="file" id="p6" name="pergunta6">
+          <!-- type="file" = botão para escolher arquivos.
+          ⚡ Pode ser usado junto com accept="image/*" para limitar a imagens.
+          ⚡ Alternativa: arrastar arquivos (drag and drop) com JS. -->
+        </form>
+      </section>
+
+      <!-- ============================ PERGUNTA 7 ============================ -->
+      <section>
+        <h2>Pergunta 7: Escolha a opção que mais se adequa</h2>
+        <form>
+          <select id="p7" name="pergunta7">
+            <!-- select = menu suspenso -->
+            <!-- option = item dentro do menu -->
+            <!-- value = valor enviado ao formulário -->
+            <option value="id">id</option>
+            <option value="type">type</option>
+            <option value="class">class</option>
+          </select>
+          <!-- ⚡ Alternativas:
+             - <datalist> + <input list="..."> → campo de texto com sugestões.
+             - <radio> → se preferir todas opções visíveis. -->
+        </form>
+      </section>
+
+      <!-- ============================ PERGUNTA 8 ============================ -->
+      <section>
+        <h2>Pergunta 8: Essa logo representa o quê?</h2>
+        <figure> <!-- Agrupa imagem + legenda -->
+          <img src="./imagem/download.jpeg" alt="Uma imagem usada na atividade">
+          <!-- img = insere imagem.
+          ⚡ Atributos úteis:
+             - width / height → tamanho.
+             - loading="lazy" → carregamento otimizado.
+             - srcset → imagens diferentes para telas diferentes. -->
+          <figcaption>Figura 1: Logo relacionada à programação</figcaption>
+          <!-- figcaption = legenda da imagem.
+          ⚡ Alternativa: colocar legenda com <p> embaixo da imagem. -->
+        </figure>
+      </section>
+
+      <!-- ============================ TABELA DE PONTUAÇÃO ============================ -->
+      <section>
+        <h2>Tabela de Pontuação</h2>
+        <table border="1"> <!-- Cria uma tabela.
+        ⚡ border é obsoleto, o ideal é usar CSS (border: 1px solid black). -->
+          <thead> <!-- Cabeçalho da tabela -->
+            <tr> <!-- Linha -->
+              <th>Pontuação</th> <!-- Cabeçalho de coluna -->
+              <th>Resultado</th>
+            </tr>
+          </thead>
+          <tbody> <!-- Corpo principal -->
+            <tr><td>0-2</td><td>Não desista</td></tr>
+            <tr><td>3-4</td><td>Ruim</td></tr>
+            <tr><td>5-6</td><td>Médio</td></tr>
+            <tr><td>7-8</td><td>Bom</td></tr>
+            <tr><td>9-10</td><td>Excelente</td></tr>
+          </tbody>
+          <tfoot> <!-- Rodapé -->
+            <tr><td colspan="2">Boa sorte na próxima!</td></tr>
+          </tfoot>
+          <!-- ⚡ Alternativas:
+             - <div> com CSS para simular tabela.
+             - <dl>, <dt>, <dd> → listas descritivas. -->
+        </table>
+      </section>
+
+    </main>
+
+    <footer> <!-- Rodapé -->
+      <p>Quiz desenvolvido por David Capulot - 2025</p>
+      <!-- ⚡ Pode incluir links de contato: <a>, redes sociais, <address>. -->
+    </footer>
+
+  </body>
+</html>
